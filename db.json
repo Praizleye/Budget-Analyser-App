@@ -1,0 +1,25 @@
+{
+  "BudgetLists": [
+    {
+      "name": "example1",
+      "id": 101,
+      "text": "Bought Breakfast",
+      "amount": 300,
+      "date": "12th March 2022"
+    },
+    {
+      "name": "example2",
+      "id": 102,
+      "text": "Bought Lunch",
+      "amount": 200,
+      "date": "12th March 2022"
+    },
+    {
+      "name": "example3",
+      "id": 103,
+      "text": "Bought dinner",
+      "amount": 400,
+      "date": "12th March 2012"
+    }
+  ]
+}
