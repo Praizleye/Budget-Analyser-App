@@ -1,69 +1,127 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600;700&display=swap');
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body{
-background-color: #141E27;
-  color: white;
-}
-.Budget-Container{
-  margin: 3rem auto;
-  border-top: 1px solid Royalblue;
-border-right: 1px solid green;
-border-bottom: 1px solid teal;
-border-left: 1px solid skyblue;
-border-radius: 10px;
-height: 70vh;
-width: 90%;
-}
-.nav{
-  border: 1px solid grey;
-  height: 3rem;
-  width: 100%;
-  background: grey;
-  position: relative;
-}
-.Headerstyle{
- margin-top: 1rem;
- text-align: center;
-}
-.examplestyle{
-  background: #7A0BC0 ;
-  margin: 1rem;
-  border-radius: 10px;
-  height: 5rem;
-  padding: 5px 10px;
-}
-
- .Btnstyle{
-    padding: 5px;
-    color: white;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    font-size: 1.2 rem;
-    cursor: pointer;
-    background-color: Royalblue;
-    position: absolute;
-    right: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .ListsContainer {
-    position: relative;
-  }
-  .closeList{
-    position: absolute;
-    left:90%;
-    top: 0;
-    border: .1px solid grey;
-    height: 1rem;
-    width: 1rem;
-    border-radius: 50%;
-    z-index: 10;
-    background-color: red;
-  }
  
+ @import url​('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600;700&display=swap'); 
+  
+ *{ 
+ margin: 0; 
+ padding :0; 
+box-sizing:border-box; 
+ } 
+ body{ 
+ background-color: #141E27; 
+ color : white; 
+ height: 100vh;
+ overflow-y: hidden;
+ } 
+ .Budget-Container{ 
+ margin: 1.5rem auto; 
+ border-top:1px solid Royalblue; 
+ border-right:1px solid green; 
+ border-bottom:1px solid teal; 
+ border-left :1px solid skyblue; 
+ border-radius: 10px; 
+ height:65vh; 
+ width:90%; 
+ overflow-x: hidden;
+ } 
+ .nav{ 
+border-top:1px solid green; 
+ border-right:1px solid teal; 
+ border-bottom:1px solid skyblue; 
+ border-left :1px solid royalblue; 
+ border-radius: 5px;
+ height: 3.5rem; 
+ width: 100%; 
+ top: 90%;
+background: black; 
+ position: absolute; 
+ } 
+ .Headerstyle{ 
+ margin-top:1rem; 
+ text-align:center; 
+ } 
+ .examplestyle{ 
+background-image: rgb(37,34,85);
+background-image: linear-gradient(120deg, rgba(37,34,85,1) 6%, rgba(55,55,153,0.8786057692307693) 48%, rgba(19,169,196,1) 96%);
+ margin: 1rem; 
+border-radius: 10px; 
+ height: 5rem; 
+ padding: 5px 10px; 
+ position: relative;
+ } 
+  
+ .Btnstyle,
+ .Btnstyle-Chart,
+ .Btnstyle-About{
+ padding: 5px; 
+ color: white; 
+ border-radius: 5px; 
+ outline: none; 
+ border: none; 
+ font-size: 1.2rem; 
+ cursor:pointer; 
+ background-color:Royalblue; 
+ position: absolute; 
+ left: 50%; 
+ top: 50%; 
+transform:translate(-50%,-50%); 
+ } 
+ .Btnstyle-Chart{
+   left: 10%;
+   top: 50%;
+   width: 4.5rem;
+   height: 2.3rem;
+transform:translate(-10%,-50%); 
+ }
+ .Btnstyle-About{
+   left: 90%;
+   top: 50%;
+   width: 4.5rem;
+   height: 2.3rem;
+transform:translate(-90%,-50%); 
+ }
+ form{
+   position: absolute;
+   width: 70%;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%,-50%);
+   background: #141e27;
+   border-radius: 1rem;
+border-top:1px solid royalblue; 
+ border-right:1px solid teal; 
+ border-left :1px solid green;
+ }
+  .form-control{
+    margin: 1rem;
+  }
+  .form-control input{
+    height: 1.7rem;
+    width: 100%;
+    border-radius: 10px;
+    padding: .3rem;
+    outline: none;
+    border: 0;
+border-top:1px solid green; 
+ border-right:1px solid teal; 
+ border-bottom:1px solid skyblue; 
+ border-left :1px solid royalblue;
+ 
+  }
+  .form-control label{
+    margin: .3rem;
+  }
+  
+ .styleWatchToggler {
+   opacity: 0.2;
+ }
+ .closeList{ 
+ left: 96%; 
+ top: -8px; 
+ position: absolute;
+ border:.1px solid grey; 
+ height: 1.3rem; 
+ width:1.3rem; 
+ border-radius: 50%; 
+ z-index: 10; 
+ background-color:red; 
+ }

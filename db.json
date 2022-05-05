@@ -5,21 +5,32 @@
       "id": 101,
       "text": "Bought Breakfast",
       "amount": 300,
-      "date": "12th March 2022"
+      "date": "2 Mar 2020"
     },
     {
       "name": "example2",
       "id": 102,
       "text": "Bought Lunch",
       "amount": 200,
-      "date": "12th March 2022"
+      "date": "12th Mar 2022"
     },
     {
-      "name": "example3",
-      "id": 103,
-      "text": "Bought dinner",
-      "amount": 400,
-      "date": "12th March 2012"
+      "text": "Transport to Kogi",
+      "amount": "5500",
+      "date": "2022-04-03",
+      "id": 103
+    },
+    {
+      "text": "Bought Easter stuffs ",
+      "amount": "1000",
+      "date": "2022-04-16",
+      "id": 104
+    },
+    {
+      "text": "Bought Bread",
+      "amount": "550",
+      "date": "2022-04-19",
+      "id": 105
     }
   ]
 }

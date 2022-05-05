@@ -1,6 +1,6 @@
 const Header = () =>{
   return(
-   <h2 className="Headerstyle" > Praiz's Budget Calculator</h2> 
+   <h2 className="Headerstyle" >BUDGET ANALYSER</h2> 
     )
 }
 export default Header;

@@ -5,6 +5,8 @@ import List from './List';
   someExamples,
     deleteClick,
     setSomeExamples,
+    example,
+    remEvent
   }) => {
     
   return(

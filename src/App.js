@@ -1,93 +1,116 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import {
+ Routes,
+  Route,
+  Link,
+} from "react-router-dom";
 
 import './App.css';
 import Header from './components/Header';
 import Lists from './components/Lists';
 import Btn from './components/Btn';
 import AddBudget from './components/AddBudget';
-import {FaPlus} from 'react-icons/fa';
+import Nav from './components/Nav';
+import Analysis from './components/Analysis';
+import About from './components/About';
 
 function App() {
   //write js code here
  
   const addBtnClick = () =>{
-    console.log (someExamples)
-   // console.log (someExamples.filter((el)=> el.id > 101))
   
+  setToggler(!Toggler);
+  setwatchToggler(!watchToggler);
+  setremEvent(!remEvent)
   }
   
-const submitForm = (e) => {
-  e.preventDefault();
-  setSomeExamples([...someExamples, {
-  text: textForm,
-  amount: amountForm,
-  } ]
-)
- settextForm("");
- setamountForm("");
 
-
+  
+  const [someExamples, setSomeExamples] = useState([]);
+  
+  useEffect( ()=>{
+    const BudgetLists = async () => {
+    const getbudgetfrmserver = await fetchLists();
+    setSomeExamples(getbudgetfrmserver)
+    }
+    
+    BudgetLists();
+  },[])
+  
+  // fetching lists from server 
+  const fetchLists = async() => {
+    const response = await fetch (`http://localhost:5000/BudgetLists`);
+    const data = await response.json();
+    console.log (data); 
+    return data;
   }
-  
-  
-  
-  const [someExamples, setSomeExamples] = useState( [
-   {
-      name: "example1",
-      id: 101,
-      text: "Bought Breakfast",
-      amount: 300,
-      date: '12th March 2022',
-    },
-    {
-      name: "example2",
-      id: 102,
-      text: "Bought lunch",
-      amount: 200,
-      date: '12th March 2032',
-    },
-    {
-      name: "example3",
-      id: 103,
-      text: "Bought dinner",
-      amount: 400,
-      date: '12th March 2012',
-    },
-   ]
-  )
-  
     
   const [textForm, settextForm]= useState ("");
   const [amountForm, setamountForm]= useState ("");
-//  const [dateForm, setdateForm]= useState ("");
+  const [dateForm, setdateForm]= useState ("");
+  
+ const [watchToggler, setwatchToggler]= useState (false);
+ 
+ const [Toggler, setToggler]= useState (false);
+  
+  const [remEvent, setremEvent] = 
+  useState(false);
   
   return (
+    
     <div className="App-Container">
-    <div className="Budget-Container">
     <Header />
+    
+<Routes>
+
+<Route path ="/" element ={
+    <div className="Budget-Container">
+    
+    <h2 style={{textAlign:"center", marginTop: ".5rem"}}> Expenditure </h2>
+    <div className ={watchToggler ? "styleWatchToggler" : ""}
+    >
     { someExamples.length > 0 ?
     <Lists 
+    remEvent = {remEvent}
+    setremEvent = {setremEvent}
     someExamples = {someExamples}
     setSomeExamples = {setSomeExamples}
     /> : ("Nothing to display")
     }
+    </div>
+    </div>
+}>
+    </Route>
+<Route path= "analysis" element = {
+    <Analysis />} />
     
-    <AddBudget
+<Route path= "about" element = {
+    <About />} />
+    
+  </Routes>
+    
+{Toggler ?
+    <AddBudget className = "customAdd"
     someExamples = {someExamples}
     setSomeExamples = {setSomeExamples}
     text = {textForm}
     amount = {amountForm}
+    date = {dateForm}
     settextForm = {settextForm}
     setamountForm = {setamountForm}
-    submitForm = {submitForm}
+    setdateForm = {setdateForm}
+    setToggler = {setToggler}
+    Toggler = {Toggler}
+    setwatchToggler = {setwatchToggler}
     />
-    </div>
-    <div className= "nav">
-  <button onClick={addBtnClick} 
-    className="Btnstyle"> 
-    <FaPlus />ADD </button>
-    </div>
+    : ""
+    }
+    
+    <Nav addBtnClick = {addBtnClick}/>
+    
+  
    </div>
+   
   );
 }
 
